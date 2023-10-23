@@ -28,11 +28,12 @@
     <main>
       <h1><span>We're</span> coming soon</h1>
       <p>Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
-      <label class="form">
-        <input type="email" placeholder="Email Address" class="email-input">
-        <input type="submit" value=">" class="submit-button">
-      </label>
-      <p class="error-message hidden">Please provide a valid email</p>
+      <form>
+        <input type="email" placeholder="Email Address" id="email-input">
+        <input type="submit" value="&rsaquo;" id="submit-button">
+        <img src="images/icon-error.svg" alt="error" id="error-icon" class="hidden">
+        <p class="error-message hidden">Please provide a valid email</p>
+      </form>
     </main>
 
     <footer>

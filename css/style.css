@@ -15,6 +15,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-image: url("../images/bg-pattern-desktop.svg");
+    background-size: cover;
+    min-width: 240px;
 }
 
 .content-wrapper {
@@ -63,19 +66,20 @@ main p {
     font-size: 0.9rem;
 }
 
-.form {
-    display: flex;
-    justify-content: center;
+form {
+    position: relative;
 }
 
-.email-input {
+#email-input {
     padding: 1rem;
     border: none;
     border-radius: 2rem;
-    width: 300px;
     border: 1px solid hsl(0, 36%, 70%);
-    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-    position: absolute;
+    background-color: transparent;
+    position: relative;
+    text-indent: 0.75rem;
+    width: 100%;
+    min-width: 300px;
 }
 
 input[placeholder] {
@@ -86,12 +90,12 @@ input[placeholder] {
 
 input[type=email]:focus,
 input[type=email]:active {
-    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background: transparent;
     outline: 1px solid hsl(0, 36%, 70%);
     font-weight: 400;
 }
 
-.submit-button {
+#submit-button {
     color: white;
     font-weight: 300;
     background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
@@ -99,17 +103,30 @@ input[type=email]:active {
     border: none;
     padding: 0.5rem 1.5rem;
     font-size: 1.85rem;
-    position: relative;
-    left: 118px;
-    box-shadow: 0 2px 5px lightgray;
+    position: absolute;
+    right: 0;
+    top: 0;
+    box-shadow: 0 2px 5px hsl(0, 36%, 70%);
+}
+
+#submit-button:hover {
+    cursor: pointer;
+}
+
+#error-icon {
+    height: 20px;
+    position: absolute;
+    right: 72px;
+    top: 14px;
+    width: 20px;
+    z-index: 5;
 }
 
 .error-message {
     color: hsl(0, 93%, 68%);
     font-size: .8rem;
-    align-self: flex-start;
-    padding: 0 0 0 3.5rem;
-    margin: 5px 0 0 0;
+    text-align: left;
+    margin: 0.5em 0 0 1.75em;
 }
 
 .hidden {
@@ -129,28 +146,6 @@ input[type=email]:active {
 
 
 /** Media Queries for Desktop and Tablet **/
-@media only screen and (min-width: 786px) {
-    .content-wrapper {
-        max-width: 750px;
-        display: flex;
-        padding: 2rem;
-    }
-
-     /* Selects every flex item (immediate child of wrapper) */
-    .content-wrapper > * {
-        order: 9999; /* Use a high number */
-    }
-
-    main {
-        order: 1;
-    }
-
-    header {
-        order: 2;
-    }
-
-
-    .attribution {
-        display: none;
-    }
+@media screen and (min-width: 768px) {
+    
 }

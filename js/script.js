@@ -1,24 +1,20 @@
-const submitButton = document.querySelector(".submit-button");
-const userInput = document.querySelector(".email-input");
+const submitButton = document.querySelector("#submit-button");
+const userInput = document.querySelector("#email-input");
+const errorIcon = document.querySelector("#error-icon");
 const errorMsg = document.querySelector(".error-message");
 
 submitButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    userInput.classList.add("hidden");
-    const email = userInput.value;
-    
-    const validEmail = validateEmail(email);
-  
-});
-
-// Function to validate player's email input
-const validateEmail = function (input) {
     const acceptedCharacters = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/
-    if (input.length === 0) {
-        errorMsg.classList.remove("hidden");
-    } else if (!input.match(acceptedCharacters)) {
+    const userEmail = userInput.value;
+    if (!userEmail.match(acceptedCharacters)) {
+        userInput.style.border = "1px solid hsl(0, 93%, 68%)";
+        errorIcon.classList.remove("hidden");
         errorMsg.classList.remove("hidden");
     } else {
-        return input; // If all conditions are met, return the input
+        e.preventDefault();
+        userInput.style.border = "1px solid hsl(0, 36%, 70%)";
+        errorIcon.classList.add("hidden");
+        errorMsg.classList.add("hidden");
     }
-};
+});
+
