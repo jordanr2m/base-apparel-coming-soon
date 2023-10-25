@@ -10,7 +10,7 @@ submitButton.addEventListener("click", function (e) {
         userInput.style.border = "1px solid hsl(0, 93%, 68%)";
         errorIcon.classList.remove("hidden");
         errorMsg.classList.remove("hidden");
-        e.preventDefault();
+        e.preventDefault()
     }
 });
 
